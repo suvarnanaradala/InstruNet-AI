@@ -1,35 +1,119 @@
-InstruNet-AI 🎵
-A CNN-based music instrument recognition system using audio signals converted into spectrogram images for deep learning classification.
+# 🎼 Instrument Recognition System (CNN)
 
-📁 Dataset & Project Files
-Due to GitHub file size limitations, the complete dataset and generated spectrogram images are hosted on Google Drive.
+A Deep Learning based web application that classifies audio files into 11 musical instruments using a Convolutional Neural Network (CNN).
 
-🔗 Google Drive Link (Shared for all collaborators):
-https://drive.google.com/drive/folders/1uCiC8J_8ft-V8GjzG5a982gGrrpHhmsj?usp=sharing
+## 🎯 Supported Instruments
 
-Drive Folder Contains:
+- Cello  
+- Clarinet  
+- Flute  
+- Acoustic Guitar  
+- Electric Guitar  
+- Organ  
+- Piano  
+- Saxophone  
+- Trumpet  
+- Violin  
+- Voice  
 
-Raw audio files (.wav)
+---
 
-Spectrogram images generated from audio
+## 🧠 Model Details
 
-Preprocessed datasets (.npy / .npz)
+- Model File: `instrument_cnn_final.h5`
+- Input Shape: (130, 40, 1)
+- Feature Extraction: MFCC (40 coefficients)
+- Framework: TensorFlow / Keras
+- Total Classes: 11
+- Output Layer: Softmax
 
-Training and validation data
+---
 
-🚀 How to Use
+## 📁 Project Structure
 
-Open the Google Drive link above
 
-Download the required folders
+InstruNet-AI/
+│
+├── Infosys ppt.pdf
+├── LICENSE
+├── Model_evaluation.py
+├── README.md
+├── app.py
+├── audio_to_spectrogram.py
+├── metadata.csv
+├── requirements.txt
+├── resize_spectrograms.py
+├── train_final.py
 
-Place them inside the project directory
 
-Run the CNN training / evaluation scripts
 
-👥 Collaboration
-This repository is collaboratively maintained.
-All team members should download the dataset from the Drive link before running the project.
 
-📌 Note
-The dataset is not pushed directly to GitHub to keep the repository clean and manageable.
+
+
+---
+
+## ⚙️ Installation
+
+Install required libraries:
+
+```bash
+pip install streamlit tensorflow librosa numpy pandas plotly
+
+
+
+▶️ Run the Application
+streamlit run app.py
+
+
+
+Open in browser:
+
+http://localhost:8501
+
+
+
+🔍 How It Works
+
+Upload audio file (.wav / .mp3)
+
+Audio loaded using Librosa (22050 Hz)
+
+MFCC features extracted (40 coefficients)
+
+Resized to (130, 40)
+
+CNN model predicts probability distribution
+
+Highest probability displayed as final instrument
+
+
+⚠️ Important
+
+Model file must be inside models/ folder
+
+Class order must match training order
+
+Input preprocessing must match training preprocessing
+
+
+
+🛠 Technologies Used
+
+Python
+
+TensorFlow / Keras
+
+Librosa
+
+NumPy
+
+Pandas
+
+Plotly
+
+Streamlit
+
+
+License
+This project is licensed under the MIT License.
+
